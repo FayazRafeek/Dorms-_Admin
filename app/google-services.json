@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "124925185535",
+    "firebase_url": "https://dorms-e9907-default-rtdb.firebaseio.com",
+    "project_id": "dorms-e9907",
+    "storage_bucket": "dorms-e9907.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124925185535:android:402154c9be8369e5af2bca",
+        "android_client_info": {
+          "package_name": "com.example.dorms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124925185535-0hv2s5mg81c1jbdndm4s061if7v11idu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ-SjwuI9wYFlZt3laYW-mPZ6cDieZuKI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "124925185535-0hv2s5mg81c1jbdndm4s061if7v11idu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124925185535:android:d8a370743a1ee3a6af2bca",
+        "android_client_info": {
+          "package_name": "com.example.dormsadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124925185535-0hv2s5mg81c1jbdndm4s061if7v11idu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ-SjwuI9wYFlZt3laYW-mPZ6cDieZuKI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "124925185535-0hv2s5mg81c1jbdndm4s061if7v11idu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
