@@ -178,40 +178,15 @@ public class AddStudentActivity extends AppCompatActivity {
     }
 
 
-    void sendMail(){
-        new MaildroidX.Builder()
-                .smtp("smtp.gmail.com")
-                .smtpUsername("dormshostel@gmail.com")
-                .smtpPassword("wrubbhlykjaknxga")
-                .port("465")
-                .type(MaildroidXType.HTML)
-                .to(student.getEmail())
-                .from("dormshostel@gmail.com")
-                .subject("Welcome to Dorms Hostel App")
-                .body("Hi " + student.getFull_name()
-                +"\n\n"+
+    void sendMail() {
+        AppSingleton.getINSTANCE().sendMail(student.getEmail(),
+                student.getFull_name(),
+                "Hi " + student.getFull_name()
+                        + "\n\n" +
                         "This is a confiration mail regarding your account creation\nDownload dorms students and and login using the following credentials\n\n" +
-                                "Username : " + student.getEmail()
-                        + "\nPassword : " + student.getPassword() +"\n\n\nThank you."
-                )
-                .onCompleteCallback(new MaildroidX.onCompleteCallback() {
-                    @Override
-                    public void onSuccess() {
-                        Toast.makeText(AddStudentActivity.this, "Email had sent to student", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onFail(String s) {
-                        Toast.makeText(AddStudentActivity.this, "Failed to send email", Toast.LENGTH_SHORT).show();
-                        Toast.makeText(AddStudentActivity.this, s, Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public long getTimeout() {
-                        return 5000;
-                    }
-                })
-                .mail();
+                        "Username : " + student.getEmail()
+                        + "\nPassword : " + student.getPassword() + "\n\n\nThank you."
+        );
     }
 
 }

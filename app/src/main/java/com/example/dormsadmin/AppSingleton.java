@@ -1,5 +1,8 @@
 package com.example.dormsadmin;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
@@ -10,6 +13,9 @@ import com.example.dormsadmin.Model.Student;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import co.nedim.maildroidx.MaildroidX;
+import co.nedim.maildroidx.MaildroidXType;
 
 public class AppSingleton {
 
@@ -106,5 +112,36 @@ public class AppSingleton {
 
     public void setSelectedMenu(MenuSelection selectedMenu) {
         this.selectedMenu = selectedMenu;
+    }
+
+    public void sendMail(String email,String name, String msg){
+
+        new MaildroidX.Builder()
+                .smtp("smtp.gmail.com")
+                .smtpUsername("dormshostel@gmail.com")
+                .smtpPassword("wrubbhlykjaknxga")
+                .port("465")
+                .type(MaildroidXType.HTML)
+                .to(email)
+                .from("dormshostel@gmail.com")
+                .subject("Welcome to Dorms Hostel App")
+                .body(msg)
+                .onCompleteCallback(new MaildroidX.onCompleteCallback() {
+                    @Override
+                    public void onSuccess(){
+                        Log.d("333", "onSuccess: Mail success");
+                    }
+
+                    @Override
+                    public void onFail(String s) {
+                        Log.d("333", "onSuccess: Mail failed " + s);
+                    }
+
+                    @Override
+                    public long getTimeout() {
+                        return 10000;
+                    }
+                })
+                .mail();
     }
 }
